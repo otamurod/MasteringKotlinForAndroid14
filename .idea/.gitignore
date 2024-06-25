@@ -1,0 +1,6 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Ignore build directories in all projects
+*/app/build/
+*/build/
