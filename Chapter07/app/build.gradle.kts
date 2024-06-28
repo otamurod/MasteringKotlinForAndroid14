@@ -65,6 +65,7 @@ dependencies {
     implementation(libs.compose.navigation)
     implementation(libs.compose.window.size)
     implementation(libs.androidx.window)
+
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.junitExt)
     androidTestImplementation(libs.test.espresso)
