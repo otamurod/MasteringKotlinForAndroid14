@@ -1,0 +1,19 @@
+package uz.otamurod.chapter10
+
+import android.app.Application
+import uz.otamurod.chapter10.di.appModules
+import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.workmanager.koin.workManagerFactory
+import org.koin.core.context.startKoin
+
+class ChapterTenApplication: Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidContext(applicationContext)
+            workManagerFactory()
+            modules(appModules)
+        }
+    }
+}
