@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class uz.otamurod.chapter12.data.Cat.** { *; }
+-keep class uz.otamurod.chapter12.data.CatEntity.** { *; }
+# With R8 full mode generic signatures are stripped for classes thatare not
+# kept. Suspend functions are wrapped in continuations where the type argument is used.
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+-keep,allowobfuscation,allowshrinking interface retrofit2.Call
+-keep,allowobfuscation,allowshrinking class retrofit2.Response

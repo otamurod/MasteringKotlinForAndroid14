@@ -6,6 +6,15 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile = file("../keystore/pets_keystore_file.jks")
+            storePassword = "pets_app_key"
+            keyAlias = "pets_app_key"
+            keyPassword = "pets_app_key"
+        }
+    }
+
     namespace = "uz.otamurod.chapter12"
     compileSdk = 34
 
@@ -23,15 +32,22 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android.txt"),
                     "proguard-rules.pro"
                 )
             )
+            signingConfig = signingConfigs.getByName("release")
+        }
+        debug {
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
