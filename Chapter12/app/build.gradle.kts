@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlinx-serialization")
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -95,6 +97,10 @@ dependencies {
     implementation(libs.work.runtime)
     implementation(libs.workmanager.koin)
     testImplementation(libs.bundles.test)
+
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.messaging)
 
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.junitExt)
